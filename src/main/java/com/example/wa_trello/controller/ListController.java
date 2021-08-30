@@ -18,12 +18,12 @@ public class ListController {
         return listService.toDoListSave(dto);
     }
 
-    @PutMapping("/lists/:id") //Update List
+    @PutMapping("/lists/{id}") //Update List
     public Long updateList(@PathVariable("id") Long id, @RequestBody ToDoListUpdateRequestDto dto) {
         return listService.toDoListUpdate(id,dto);
     }
 
-    @DeleteMapping("/lists/:id") //Delete List
+    @DeleteMapping("/lists/{id}") //Delete List
     public void deleteList(@RequestBody ToDoListDeleteDto dto) {
         listService.toDoListDelete(dto);
     }
