@@ -16,12 +16,12 @@ public class CardController {
         return cardService.cardSave(dto);
     }
 
-    @PutMapping("/cards/:id") //Update List
+    @PutMapping("/cards/{id}") //Update List
     public Long updateCard(@PathVariable("id") Long id, @RequestBody CardUpdateRequestDto dto) {
         return cardService.cardUpdate(id,dto);
     }
 
-    @DeleteMapping("/cards/:id") //Delete List
+    @DeleteMapping("/cards/{id}") //Delete List
     public void deleteCard(@RequestBody CardDeleteDto dto) {
         cardService.cardDelete(dto);
     }

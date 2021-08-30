@@ -27,7 +27,7 @@ public class MainController {
         return "특정리스트"; //수정필요
     }
 
-    @GetMapping("/cards/:id") //Read Card
+    @GetMapping("/cards/{id}") //Read Card
     public String findByIdCard(@PathVariable("id") Long id, Model model) {
         CardResponseDto dto = cardService.cardFindById(id);
         model.addAttribute("card", dto);
