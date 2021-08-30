@@ -16,10 +16,10 @@ public class ToDoListResponseDto {
     private int order;
     private Long id;
 
-    public ToDoListResponseDto(ToDoList toDoList) {
-        this.cards = getCards();
-        this.title = getTitle();
-        this.order = getOrder();
-        this.id = getId();
+    public ToDoListResponseDto(ToDoList toDoList){
+        this.id = toDoList.getId();
+        this.cards = toDoList.getCards();
+        this.title = toDoList.getTitle();
+        this.order = toDoList.getOrder();
     }
 }

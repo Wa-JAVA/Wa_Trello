@@ -16,32 +16,32 @@ public class ListService {
 
     @Transactional
     public Long toDoListSave(ToDoListSaveRequestDto toDoListSaveRequestDto){
-        return toDoListRepository.save(toDoListSaveRequestDto.toEntity()).getId;
+        return toDoListRepository.save(toDoListSaveRequestDto.toEntity()).getId();
     }
 
     @Transactional(readOnly = true)
     public List<ToDoListResponseDto> toDoListFindAll(){
         return toDoListRepository.findAll()
-                .Stream()
+                .stream()
                 .map(ToDoListResponseDto::new)
                 .collect(Collectors.toList());
     }
 
     @Transactional(readOnly = true)
     public ToDoListResponseDto toDoListFindById(Long id){
-        ToDoList toDoList = toDoListRepository.findById(id);
-        return ToDoListResponseDto(toDoList);
+        ToDoList toDoList = toDoListRepository.findById(id).orElseThrow(()->new  IllegalAccessError("[ToDoList=]"+id+"] 가 없습니다."));
+        return new ToDoListResponseDto(toDoList);
     }
 
     @Transactional
     public void toDoListDelete(ToDoListDeleteDto toDoListDeleteDto) {
-        Long id = ToDoListDeleteDto.getId;
+        Long id = toDoListDeleteDto.getId();
         toDoListRepository.deleteById(id);
     }
 
     @Transactional
     public Long toDoListUpdate(Long id, ToDoListUpdateRequestDto toDoListUpdateRequestDto){
-        toDoListRepository.update(id,toDoListUpdateRequestDto.getTitle);
+        toDoListRepository.updateTitle(id,toDoListUpdateRequestDto.getTitle());
         return id;
     }
 

@@ -17,6 +17,6 @@ public class CardResponseDto {
     public CardResponseDto(Card card) {
         this.title = card.getTitle();
         this.order = card.getOrder();
-        this.id = card.getId;
+        this.id = card.getId();
     }
 }
