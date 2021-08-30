@@ -19,8 +19,8 @@ public class CardService {
 
     @Transactional(readOnly = true)
     public CardResponseDto cardFindById(Long id){
-        Card card = cardReopsitory.findById(id);
-        return CardResponseDto(card);
+        Card card = cardReopsitory.findById(id).orElseThrow(()->new  IllegalAccessError("[Card=]"+id+"] 가 없습니다."));
+        return new CardResponseDto(card);
     }
 
     @Transactional

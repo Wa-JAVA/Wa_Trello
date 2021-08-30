@@ -29,8 +29,8 @@ public class ListService {
 
     @Transactional(readOnly = true)
     public ToDoListResponseDto toDoListFindById(Long id){
-        ToDoList toDoList = toDoListRepository.findById(id);
-        return ToDoListResponseDto(toDoList);
+        ToDoList toDoList = toDoListRepository.findById(id).orElseThrow(()->new  IllegalAccessError("[ToDoList=]"+id+"] 가 없습니다."));
+        return new ToDoListResponseDto(toDoList);
     }
 
     @Transactional
