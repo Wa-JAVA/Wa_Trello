@@ -1,6 +1,7 @@
 package com.example.wa_trello.dto;
 
 import com.example.wa_trello.entity.Card;
+import com.example.wa_trello.entity.ToDoList;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,11 +16,10 @@ public class ToDoListResponseDto {
     private int order;
     private Long id;
 
-    @Builder
-    public ToDoListResponseDto(List<Card> cards, String title, int order, long id) {
-        this.cards = cards;
-        this.title = title;
-        this.order = order;
-        this.id = id;
+    public ToDoListResponseDto(ToDoList toDoList){
+        this.id = toDoList.getId();
+        this.cards = toDoList.getCards();
+        this.title = toDoList.getTitle();
+        this.order = toDoList.getOrder();
     }
 }

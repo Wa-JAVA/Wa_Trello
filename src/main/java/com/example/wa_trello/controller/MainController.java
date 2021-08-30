@@ -20,7 +20,7 @@ public class MainController {
         return "메인"; //수정필요
     }
 
-    @GetMapping("/lists/:id") //Read List
+    @GetMapping("/lists/{id}") //Read List
     public String findByIdList(@PathVariable("id") Long id, Model model) {
         ToDoListResponseDto dto = listService.toDoListFindById(id);
         model.addAttribute("lists", dto);

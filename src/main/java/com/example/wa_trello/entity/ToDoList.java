@@ -18,7 +18,6 @@ import java.util.List;
 public class ToDoList {
     @Id
     @GeneratedValue
-
     @Column
     private Long id;
 
