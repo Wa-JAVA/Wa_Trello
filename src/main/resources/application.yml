@@ -1,4 +1,21 @@
 spring:
+  profiles:
+    active: local
+
+
+  ----
+
+spring:
+  profiles: local
+  datasource:
+    url: jdbc:h2:mem:testdb
+    data: classpath:data-h2.sql
+
+  jpa:
+    show-sql: true
+    hidernate:
+      ddl-auto: update
+      defer-datasource-initalization: true
   h2:
     console:
       enabled: true
