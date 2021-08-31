@@ -6,11 +6,14 @@ import com.example.wa_trello.dto.ToDoListSaveRequestDto;
 import com.example.wa_trello.dto.ToDoListUpdateRequestDto;
 import com.example.wa_trello.entity.ToDoList;
 import com.example.wa_trello.repository.ToDoListRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Service
+@AllArgsConstructor
 public class ListService {
     private ToDoListRepository toDoListRepository;
 

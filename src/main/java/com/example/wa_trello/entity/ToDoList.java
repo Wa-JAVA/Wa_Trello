@@ -18,13 +18,13 @@ public class ToDoList {
     private Long id;
 
     @Column
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Card> cards;
 
     @Column
     private String title;
 
-    @Column
+    @Column(name = "orderNum")
     private int order;
 
     @Builder

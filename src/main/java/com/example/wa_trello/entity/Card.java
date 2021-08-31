@@ -17,7 +17,7 @@ public class Card {
 
     @Column
     private String title;
-    @Column
+    @Column(name = "orderNum")
     private int order;
 
     @Builder
