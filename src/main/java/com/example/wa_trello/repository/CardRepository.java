@@ -12,5 +12,5 @@ public interface CardRepository extends JpaRepository<Card,Long> {
 
     @Modifying
     @Query(value = "update Card C SET C.order = ?2 where C.id = ?1")
-    Long updateOrder(Long id, int order);
+    int updateOrder(Long id, int order);
 }

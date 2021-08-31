@@ -10,8 +10,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service
 @AllArgsConstructor
+@Service
 public class CardService {
 
     private CardRepository cardRepository;
@@ -38,4 +38,5 @@ public class CardService {
         cardRepository.updateContent(id,cardUpdateRequestDto.getTitle());
         return id;
     }
+
 }
