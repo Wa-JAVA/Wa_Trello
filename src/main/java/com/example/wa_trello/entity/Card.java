@@ -12,13 +12,14 @@ import javax.persistence.*;
 public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Column
     private Long id;
 
     @Column
     private String title;
-    
-    @Column
+
+    @Column (name = "orderNum")
     private int order;
 
     @Builder
