@@ -17,6 +17,7 @@ public class Card {
 
     @Column
     private String title;
+    
     @Column
     private int order;
 
