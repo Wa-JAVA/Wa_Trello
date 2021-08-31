@@ -6,8 +6,12 @@ import com.example.wa_trello.dto.CardSaveRequestDto;
 import com.example.wa_trello.dto.CardUpdateRequestDto;
 import com.example.wa_trello.entity.Card;
 import com.example.wa_trello.repository.CardReopsitory;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+@AllArgsConstructor
+@Service
 public class CardService {
 
     private CardReopsitory cardReopsitory;
