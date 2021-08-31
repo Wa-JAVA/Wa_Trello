@@ -14,6 +14,7 @@ public class CardResponseDto {
     private int order;
     private Long id;
 
+    @Builder
     public CardResponseDto(Card card) {
         this.title = card.getTitle();
         this.order = card.getOrder();
