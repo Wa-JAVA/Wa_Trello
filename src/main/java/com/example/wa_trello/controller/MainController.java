@@ -19,6 +19,7 @@ public class MainController {
     @GetMapping("/") //List + Card를 표시
     public String findAllList(Model model) {
         model.addAttribute("lists", listService.toDoListFindAll());
+        model.addAttribute("card",cardService.cardFindAll());
         return "main";
     }
 

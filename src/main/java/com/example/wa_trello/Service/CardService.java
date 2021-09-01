@@ -10,6 +10,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @AllArgsConstructor
 @Service
 public class CardService {
@@ -25,6 +28,14 @@ public class CardService {
     public CardResponseDto cardFindById(Long id){
         Card card = cardRepository.findById(id).orElseThrow(()->new  IllegalAccessError("[Card= "+id+"] 가 없습니다."));
         return new CardResponseDto(card);
+    }
+
+    @Transactional(readOnly = true)
+    public List<CardResponseDto> cardFindAll(){
+        return cardRepository.findAll()
+                .stream()
+                .map(CardResponseDto::new)
+                .collect(Collectors.toList());
     }
 
     @Transactional

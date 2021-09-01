@@ -24,15 +24,18 @@
         <div id="listWrap">
             <div class="list">
                 <div class="listTitleWrap">
-                    <div class="title">list test</div>
+                    {{#each lists}}
+                    <div class="title">{{title}}</div>
                     <form class="titleEdit">
                         <input class="listTitle" type="text" placeholder="List Name..." autocomplete="off">
                     </form>
+                    {{/each}}
                 </div>
+
                 <div class="cardWrap">
-                    <div class="cardContent">test1</div>
-                    <div class="cardContent">test2</div>
-                    <div class="cardContent">test3</div>
+                    {{#each card}}
+                    <div class="cardContent">{{title}}</div>
+                    {{/each}}
                 </div>
                 <div class="cardAddWrap">
                     <div class="addLabel" style="">+ Add another card</div>
