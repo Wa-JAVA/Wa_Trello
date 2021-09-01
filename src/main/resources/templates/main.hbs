@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/script.js"></script> <!-- 스크립트 파일 생성해야함 -->
+    <title>Trello</title>
+</head>
+
+<body>
+<div class="wrapper">
+    <nav>Trello</nav>
+    <div id="contentWrap">
+        <div id="projectTitleWrap">
+            <div id="title">Project test</div>
+            <form id="titleEdit">
+                <input id="projectTitle" type="text" placeholder="Project Name..." autocomplete="off">
+                <input type="submit" style="display: none">
+            </form>
+        </div>
+        <div id="listWrap">
+            <div class="list">
+                <div class="listTitleWrap">
+                    <div class="title">list test</div>
+                    <form class="titleEdit">
+                        <input class="listTitle" type="text" placeholder="List Name..." autocomplete="off">
+                    </form>
+                </div>
+                <div class="cardWrap">
+                    <div class="cardContent">test1</div>
+                    <div class="cardContent">test2</div>
+                    <div class="cardContent">test3</div>
+                </div>
+                <div class="cardAddWrap">
+                    <div class="addLabel" style="">+ Add another card</div>
+                    <form class="addCard" style="display: none;">
+                        <textarea name="" class="addCardContent" cols="30" rows="10" placeholder="card content..."></textarea>
+                        <button class="btn btn-green addCardBtn">Add Card</button><span class="close" id="addCardClose">×</span>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="listAddWrap">
+            <div id="addLabel">+ Add another list</div>
+            <form id="addList">
+                <input id="addListTitle" type="text" placeholder="Enter list title..." autocomplete="off">
+                <button class="btn btn-green">Add List</button><span class="close" id="addListClose">&times</span>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+</body>
+
+</html>

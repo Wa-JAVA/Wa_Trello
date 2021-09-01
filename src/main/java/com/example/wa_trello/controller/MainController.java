@@ -4,12 +4,14 @@ import com.example.wa_trello.Service.CardService;
 import com.example.wa_trello.Service.ListService;
 import com.example.wa_trello.dto.CardResponseDto;
 import com.example.wa_trello.dto.ToDoListResponseDto;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
+@AllArgsConstructor
 public class MainController {
     private ListService listService;
     private CardService cardService;
