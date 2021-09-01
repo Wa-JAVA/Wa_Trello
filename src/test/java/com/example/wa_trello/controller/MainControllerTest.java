@@ -12,7 +12,6 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-
 public class MainControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
@@ -29,7 +28,7 @@ public class MainControllerTest {
     @Test
     public void 리스트페이지() {
         //when
-        String list = this.restTemplate.getForObject("/lists/:id", String.class);
+        String list = this.restTemplate.getForObject("/lists/{id}", String.class);
 
         //then
         assertThat(list).contains("리스트페이지");
@@ -38,7 +37,7 @@ public class MainControllerTest {
     @Test
     public void 카드페이지() {
         //when
-        String card = this.restTemplate.getForObject("/cards/:id", String.class);
+        String card = this.restTemplate.getForObject("/cards/{id}", String.class);
 
         //then
         assertThat(card).contains("카드페이지");
