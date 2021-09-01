@@ -23,7 +23,7 @@ public class CardService {
 
     @Transactional(readOnly = true)
     public CardResponseDto cardFindById(Long id){
-        Card card = cardRepository.findById(id).orElseThrow(()->new  IllegalAccessError("[Card=]"+id+"] 가 없습니다."));
+        Card card = cardRepository.findById(id).orElseThrow(()->new  IllegalAccessError("[Card= "+id+"] 가 없습니다."));
         return new CardResponseDto(card);
     }
 

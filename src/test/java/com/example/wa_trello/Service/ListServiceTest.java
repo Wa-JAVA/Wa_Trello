@@ -11,9 +11,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
-
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -54,7 +51,7 @@ public class ListServiceTest {
         ToDoList toDoList = toDoListRepository.findAll().get(0);
         assertThat(toDoList.getCards().get(0).getTitle()).isEqualTo(toDoListSaveRequestDto.getCards().get(0).getTitle());
         assertThat(toDoList.getCards().get(0).getOrder()).isEqualTo(toDoListSaveRequestDto.getCards().get(0).getOrder());
-        assertThat(toDoList.getOrder()).isEqualTo(toDoListSaveRequestDto.getOrder());
+        assertThat(toDoList.getOrder_Num()).isEqualTo(toDoListSaveRequestDto.getOrder());
         assertThat(toDoList.getTitle()).isEqualTo(toDoListSaveRequestDto.getTitle());
     }
 

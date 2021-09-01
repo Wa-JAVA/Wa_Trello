@@ -20,6 +20,6 @@ public class ToDoListResponseDto {
         this.id = toDoList.getId();
         this.cards = toDoList.getCards();
         this.title = toDoList.getTitle();
-        this.order = toDoList.getOrder();
+        this.order = toDoList.getOrder_Num();
     }
 }

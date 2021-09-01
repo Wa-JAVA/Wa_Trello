@@ -12,7 +12,7 @@ public interface ToDoListRepository extends JpaRepository<ToDoList,Long> {
     int updateTitle(Long id, String title);
 
     @Modifying
-    @Query(value = "update ToDoList T SET T.order = ?2 where T.id = ?1")
+    @Query(value = "update ToDoList T SET T.order_Num = ?2 where T.id = ?1")
     Long updateOrder(Long id, int order);
 
 }

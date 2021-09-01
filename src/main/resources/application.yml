@@ -3,7 +3,7 @@ spring:
     active: local
 
 
-  ----
+---
 
 spring:
   profiles: local
@@ -13,9 +13,11 @@ spring:
 
   jpa:
     show-sql: true
-    hidernate:
-      ddl-auto: update
-      defer-datasource-initalization: true
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+
   h2:
     console:
       enabled: true
+

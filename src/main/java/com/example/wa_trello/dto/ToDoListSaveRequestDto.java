@@ -2,6 +2,7 @@ package com.example.wa_trello.dto;
 
 import com.example.wa_trello.entity.Card;
 import com.example.wa_trello.entity.ToDoList;
+import com.example.wa_trello.repository.CardRepository;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,7 +28,7 @@ public class ToDoListSaveRequestDto {
         return ToDoList.builder()
                 .cards(cards)
                 .title(title)
-                .order(order)
+                .order_Num(order)
                 .build();
     }
 }

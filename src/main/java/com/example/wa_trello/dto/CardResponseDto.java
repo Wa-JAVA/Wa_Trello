@@ -17,7 +17,7 @@ public class CardResponseDto {
     @Builder
     public CardResponseDto(Card card) {
         this.title = card.getTitle();
-        this.order = card.getOrder();
+        this.order = card.getOrder_Num();
         this.id = card.getId();
     }
 }

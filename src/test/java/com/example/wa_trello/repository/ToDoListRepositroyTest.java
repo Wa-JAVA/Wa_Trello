@@ -41,7 +41,7 @@ public class ToDoListRepositroyTest {
         ToDoList toDoList = toDoLists.get(0);
 
         assertThat(toDoList.getTitle(),is("리스트1"));
-        assertThat(toDoList.getOrder(),is(0));
+        assertThat(toDoList.getOrder_Num(),is(0));
         assertThat(toDoList.getCards().get(0).getTitle(),is(cardRepository.findAll().get(0).getTitle()));
 
     }

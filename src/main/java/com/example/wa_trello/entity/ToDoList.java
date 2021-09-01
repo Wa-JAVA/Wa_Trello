@@ -24,13 +24,13 @@ public class ToDoList {
     @Column
     private String title;
 
-    @Column(name = "orderNum")
-    private int order;
+    @Column
+    private int order_Num;
 
     @Builder
-    public ToDoList(List<Card> cards, String title, int order){
+    public ToDoList(List<Card> cards, String title, int order_Num){
         this.cards = cards;
         this.title = title;
-        this.order = order;
+        this.order_Num = order_Num;
     }
 }
